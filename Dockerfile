@@ -1,9 +1,12 @@
 FROM squidfunk/mkdocs-material:8.5.10
 
+# Copy project files to the new image.
 COPY . .
 
+# Install Caddy web server.
 RUN apk add --no-cache caddy
 
+# Install MkDocs plugins and dependencies.
 RUN pip install --no-cache-dir \
       "mkdocs-minify-plugin" \
       "mkdocs-redirects" \
@@ -14,6 +17,7 @@ RUN pip install --no-cache-dir \
       "pillow" \
       "cairosvg";
 
+# Build MkDocs site with the mkdocs CLI tool.
 RUN mkdocs build
 
 # Expose MkDocs development server port
