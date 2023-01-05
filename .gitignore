@@ -1,0 +1,17 @@
+# Directories
+**/.DS_Store
+**/.vercel
+**/site
+**/bin
+**/dist
+**/node_modules
+**/coverage
+**/out
+**/public
+**/tmp
+**/.cache
+
+# Files
+**/.dccache
+**/*.env
+
